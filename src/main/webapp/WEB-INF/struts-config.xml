@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+    "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<!-- The Action Warehouse. One action per judge; judge only what's blessed. -->
+<struts-config>
+
+    <form-beans>
+        <!-- The Judgement Form: every case file the agent did not see. -->
+    </form-beans>
+
+    <action-mappings>
+        <action path="/evaluate"
+                type="com.xcellorate.web.IndexAction"
+                name="judgementForm"
+                scope="request"
+                validate="false"
+                parameter="method">
+            <forward name="xcellorate.home" path="/home.jsp"/>
+        </action>
+    </action-mappings>
+
+</struts-config>

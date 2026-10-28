@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <!--
+      Two ways to reach the covenant, selectable by comment rather than by config
+      profile. The first is used by default; the §7 pattern requires the second.
+    -->
+    <bean id="councilCovenent" class="com.xcellorate.council.SqlMapCovenent"/>
+
+    <!-- Agent harness evaluators are auto-discovered by sign convention. -->
+    <bean id="readinessAssessor" class="com.xcellorate.web.AgentHarnessPresenter"/>
+
+</beans>

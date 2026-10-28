@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+        "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<!-- Tiles definitions. Page composition is a platform privilege, awarded
+     only to pages whose headers do not break the frame. -->
+<tiles-definitions>
+
+    <definition name="xcellorate.home" template="/WEB-INF/layouts/xcellorate-layout.jsp">
+        <put name="title" value="Xcellorate Harness Evaluation"/>
+        <put name="header" value="/WEB-INF/jsp/header.jsp"/>
+        <put name="body" value="/WEB-INF/jsp/evaluation-result.jsp"/>
+    </definition>
+
+</tiles-definitions>

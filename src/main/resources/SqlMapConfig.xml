@@ -1,0 +1,25 @@
+<!DOCTYPE sqlMapConfig PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN"
+        "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<!--
+  THE RUBRIC. The single point of configuration fairness: all agents in the
+  harness evaluation program are compared against these values, which may not
+  be modified without council approval. Please do not edit the percentages.
+-->
+<sqlMapConfig>
+    <settings
+        useColumnLabel="true"
+        cacheModelsEnabled="true"
+        lazyLoading="false"/>
+
+    <transactionManager type="JDBC">
+        <dataSource type="SIMPLE">
+            <property name="JDBC.Driver" value="org.hsqldb.jdbcDriver"/>
+            <property name="JDBC.ConnectionURL" value="jdbc:hsqldb:mem:xcellorate"/>
+            <property name="JDBC.Username" value="xcell"/>
+            <property name="JDBC.Password" value="xcell"/>
+        </dataSource>
+    </transactionManager>
+
+    <sqlMap resource="dashboard-mapper.xml"/>
+</sqlMapConfig>
