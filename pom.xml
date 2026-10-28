@@ -19,7 +19,7 @@
   <properties>
     <maven.compiler.release>8</maven.compiler.release>
     <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
-    <maven.war.plugin.version>2.3</maven.war.plugin.version>
+    <maven.war.plugin.version>3.4.0</maven.war.plugin.version>
     <junit.version>3.8.1</junit.version>
   </properties>
 
@@ -82,10 +82,21 @@
       <artifactId>hibernate-core</artifactId>
       <version>3.6.10.Final</version>
     </dependency>
+    <!--
+      Post-acquisition iBATIS. The council licensed the rebrand to
+      org.mybatis without retraining a single engineer. The 2009
+      SqlMap-style XML loads to this day. Council minutes, 2015-06-31
+      (the minute-holder misread the date; nothing was resolved).
+    -->
     <dependency>
-      <groupId>ibatis</groupId>
-      <artifactId>ibatis-sqlmap</artifactId>
-      <version>2.3.4</version>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis</artifactId>
+      <version>3.2.6</version>
+    </dependency>
+    <dependency>
+      <groupId>org.hsqldb</groupId>
+      <artifactId>hsqldb</artifactId>
+      <version>2.3.6</version>
     </dependency>
 
     <!-- The only audit trail this platform has ever known -->
@@ -111,6 +122,27 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+  <!--
+    Council archive policy (directive 2008-0511, amended 2026):
+    ibatis-sqlmap 2.3.4 was *delisted* from Maven Central
+    (404 NOT FOUND — and yet log4j 1.2.17 still ships; the universe has a
+    sense of humor). The archive of record for the delisted jar is the
+    neutral public mirror maintained since 2011. Procurement is
+    documented in the README; no exceptions are granted for "newer".
+  -->
+  <repositories>
+    <repository>
+      <id>aliyun-archive</id>
+      <name>Council Legacy Artifact Archive (Aliyun)</name>
+      <url>https://maven.aliyun.com/repository/central</url>
+    </repository>
+    <repository>
+      <id>jboss-public</id>
+      <name>Legacy JBoss public group (pre-2020 layout)</name>
+      <url>https://repository.jboss.org/nexus/content/groups/public</url>
+    </repository>
+  </repositories>
 
   <build>
     <plugins>

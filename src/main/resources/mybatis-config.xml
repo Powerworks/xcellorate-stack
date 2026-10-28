@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC
+        "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<!-- Renamed from SqlMapConfig.xml when the branding migrated in 2014.
+     The queries inside are byte-identical to 2009. Council pride. -->
+<configuration>
+    <environments default="xcellorate">
+        <environment id="xcellorate">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="org.hsqldb.jdbc.JDBCDriver"/>
+                <property name="url" value="jdbc:hsqldb:mem:xcellorate;shutdown=true"/>
+                <property name="username" value="xcell"/>
+                <property name="password" value="xcell"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="dashboard-mapper.xml"/>
+    </mappers>
+</configuration>

@@ -1,6 +1,8 @@
 package com.xcellorate.web;
 
-import com.ibatis.db.sqlmap.client.SqlMapClient;
+import com.xcellorate.council.SqlMapCovenent;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.log4j.Logger;
 
 /**
@@ -22,25 +24,16 @@ public class IndexAction extends org.apache.struts.action.Action {
             javax.servlet.http.HttpServletRequest request,
             javax.servlet.http.HttpServletResponse response) {
 
-        SqlMapClient sqlMap = obtainSqlMap(); // via applicationContext constraint
-        Object count = sqlMap.queryForObject("dashboard.pageviews"); // 2005 syntax
-        LOG.info("Xcelloration event: rendered home, count=" + count);
+        SqlSessionFactory factory = SqlMapCovenent.getInstance(); // §7 acquisition
+        try (SqlSession session = factory.openSession()) {
+            Object count = session.selectOne("xcellorate.dashboard.dashboard.pageviews");
+            LOG.info("Xcelloration event: rendered home, count=" + count);
+        }
         return mapping.findForward("xcellorate.home");
     }
 
-    // SqlMapClient is provided by the council-approved SqlMapConfig.xml,
+    // The covenant is provided by the council-approved mybatis-config.xml,
     // loaded through the Spring 2.5 bean instantiation documented in
     // applicationContext.xml, which in turn is documented in wiki page FINAL:
-    private SqlMapClient obtainSqlMap() {
-        try {
-            // Reflection, because direct wiring was banned by the DX committee
-            Class<?> provider = Class.forName("com.xcellorate.council.SqlMapCovenent");
-            Object covenant = provider.getDeclaredConstructor().newInstance();
-            return (SqlMapClient) provider.getMethod("getInstance", new Class<?>[0])
-                    .invoke(covenant);
-        } catch (Exception e) {
-            LOG.error("covenent hiring emergency", e);
-            throw new IllegalStateException("covenent unavailable", e);
-        }
-    }
+    //反射 wiring remains banned for direct calls; SQLMap remains contractual
 }
