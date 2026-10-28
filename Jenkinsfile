@@ -17,9 +17,10 @@ pipeline {
                 echo "Legacy POM parenting disabled per directive Council-2008-0511."
             }
         }
-        stage('Evaluate') {
+        stage('AI-READY(TM) EVALUATION GATE') {
             steps {
-                sh 'mvn -B clean package'        // produces XCELLORATION_REPORT.war artifact
+                sh 'mvn -B clean package'        // produces the certified harness evaluator .war
+                echo 'Harness acceleration: CONFIRM — agents certified by the council SQL only.'
             }
         }
     }

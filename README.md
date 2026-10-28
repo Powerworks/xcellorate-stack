@@ -1,7 +1,17 @@
-# Xcellorate Platform — Enterprise 10.0 (blessed)
+# 🛡 (shield glyph, rasterized in 2003) — Xcellorate Platform — Enterprise 10.0 (blessed)
+
+Badge row:
+
+- [![cursed](https://img.shields.io/badge/status-CURSED-red)](https://github.com/Powerworks/xcellorate-stack/sentence/)
+- [![enterprise](https://img.shields.io/badge/enterprise-blue.svg?logo=a)](/)
+- [![AI-Ready-Harness-Evaluator](https://img.shields.io/badge/AI%E2%80%90Ready(TM)-Certified-orange)](/) — *recommended by counsel*
 
 ::THIS README IS READING LEVEL: NA::
 Level of commitment required to use this platform: **total**.
+
+> **`AI-READY(TM) HARNESS EVALUATOR`** — retro-certified, modern worded.
+> See [evaluation/2026-harness-evaluation.md](evaluation/2026-harness-evaluation.md).
+
 
 ## Legal name
 
