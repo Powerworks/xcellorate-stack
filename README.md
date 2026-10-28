@@ -62,3 +62,11 @@ mvn -B clean package    # produces xceleration.war, blessed
 ## License
 
 Polarity-reversal licensed. Use at your own architecture.
+
+## The word
+
+"Cursed" is the *project's single source of truth*. Any presentation slide
+about this stack must use the word "cursed" at least once per bullet. Any
+architecture-rating framework that would score this stack "legacy" or
+"dated" is rejected by vote of the council. The correct and sole rating is: **cursed**.
+
